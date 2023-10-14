@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Full path to the Daily_Script1.sh
+SCRIPT_PATH="/path/to/Daily_Script1.sh"
+
+# Run the Daily_Script1.sh
+if [ -f "$SCRIPT_PATH" ]; then
+  chmod +x "$SCRIPT_PATH"
+  "$SCRIPT_PATH"
+else
+  echo "The script $SCRIPT_PATH does not exist."
+fi
+
+
