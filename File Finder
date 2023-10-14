@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check for required arguments
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 [file_extension]"
+    exit 1
+fi
+
+# Assign argument to variable
+FILE_TYPE="$1"
+
+# Set search directory to root
+SEARCH_DIR="/"
+
+# Find files and print their full path
+# Use sudo to allow searching all directories, and 2>/dev/null to suppress permission errors
+sudo find "$SEARCH_DIR" -type f -name "*.$FILE_TYPE" 2>/dev/null -exec echo "File: {}" \;
